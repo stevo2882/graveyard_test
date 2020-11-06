@@ -3,8 +3,6 @@ from selenium.webdriver.support import expected_conditions as ec
 from selenium.webdriver.common.by import By
 from selenium.common.exceptions import NoSuchElementException
 
-#from page_objects.graveyards_page import GraveyardsPage
-
 
 class LandingPage:
     VIEW_GRAVEYARDS = (By.LINK_TEXT, "View All Graveyards")
@@ -24,7 +22,6 @@ class LandingPage:
 
     def click_view_all_graveyards(self):
         WebDriverWait(self.driver, 10).until(ec.visibility_of_element_located(self.VIEW_GRAVEYARDS)).click()
-        return GraveyardsPage(self.driver)
 
     def back(self):
         self.driver.back()
